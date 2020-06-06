@@ -1,0 +1,44 @@
+--- # Playbook will gather /etc/group, /etc/passwd, /etc/profile, /etc/security/lastlog, /etc/security/passwd, /etc/security/user, /var/adm/sulog and syslog.conf from in scope servers
+- hosts: all
+  become: yes
+  
+  tasks:
+  - name: Fetch the /etc/group file from the server
+    fetch:
+      src: /etc/group
+      dest: fetched/
+      
+  - name: Fetch the /etc/passwd file from the server
+    fetch:
+      src: /etc/passwd
+      dest: fetched/
+      
+  - name: Fetch the /etc/profile file from the server
+    fetch:
+      src: /etc/profile
+      dest: fetched/
+      
+  - name: Fetch the /etc/security/lastlog file from the server
+    fetch:
+      src: /etc/security/lastlog
+      dest: fetched/
+      
+  - name: Fetch the /etc/security/passwd file from the server
+    fetch:
+      src: /etc/security/passwd
+      dest: fetched/
+      
+  - name: Fetch the /etc/security/user file from the server
+    fetch:
+      src: /etc/security/user
+      dest: fetched/
+      
+  - name: Fetch the /var/adm/sulog file from the server
+    fetch:
+      src: /var/adm/sulog
+      dest: fetched/
+      
+  - name: Fetch the /etc/syslog.conf file from the server
+    fetch:
+      src: /etc/syslog.conf
+      dest: fetched/
